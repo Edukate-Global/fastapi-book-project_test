@@ -48,6 +48,7 @@ jobs:
         with:
           app-name: fastapi-book-api
           service-name: fastapi-app
+          service-instance-type: hobby23
           service-type: web
           docker: docker.io/wilsonide/fastapi-book-api:latest
         
