@@ -29,14 +29,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api
 
       - name: Debug - Verify if image exists
         run: |
-          echo "Checking image: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}"
-          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}
+          echo "Checking image: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api"
+          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api
           echo "Image details:"
-          docker inspect ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}
+          docker inspect ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api
 
       - name: Configure Koyeb
         uses: koyeb-community/koyeb-actions@v2
@@ -46,9 +46,9 @@ jobs:
       - name: Deploy on Koyeb
         uses: koyeb/action-git-deploy@v1
         with:
-          app-name: fastapi-book-api:$
+          app-name: fastapi-book-api
           service-name: api
           service-type: web
-          docker: docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}
+          docker: docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api
         
           
