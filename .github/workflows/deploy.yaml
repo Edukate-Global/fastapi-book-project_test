@@ -48,7 +48,7 @@ jobs:
         with:
           app-name: fastapi-book-api
           service-name: fastapi-app
-          service-instance-type: free
+          service-instance-type: Free
           service-type: web
           docker: docker.io/wilsonide/fastapi-book-api:latest
         
