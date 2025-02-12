@@ -50,6 +50,8 @@ jobs:
           service-name: fastapi-app
           service-instance-type: free
           service-type: web
+          service-env: "PORT=80"
+          service-ports: '80:http'
           docker: docker.io/wilsonide/fastapi-book-api:latest
         
           
