@@ -29,14 +29,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:latest
+          tags: wilsonide/fastapi-book-api:latest
 
       - name: Debug - Verify if image exists
         run: |
-          echo "Checking image: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:latest"
-          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:latest
+          echo "Checking image: wilsonide/fastapi-book-api:latest"
+          docker pull wilsonide/fastapi-book-api:latest
           echo "Image details:"
-          docker inspect ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:latest
+          docker inspect wilsonide/fastapi-book-api:latest
 
       - name: Configure Koyeb
         uses: koyeb-community/koyeb-actions@v2
@@ -49,6 +49,6 @@ jobs:
           app-name: fastapi-book-api
           service-name: api
           service-type: web
-          docker: docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:latest
+          docker: docker.io/wilsonide/fastapi-book-api:latest
         
           
