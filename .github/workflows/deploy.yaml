@@ -47,7 +47,7 @@ jobs:
         uses: koyeb/action-git-deploy@v1
         with:
           app-name: fastapi-book-api
-          service-name: api
+          service-name: fastapi-app
           service-type: web
           docker: docker.io/wilsonide/fastapi-book-api:latest
         
