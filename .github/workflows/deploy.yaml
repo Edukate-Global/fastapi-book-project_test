@@ -31,7 +31,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}
 
-      - name: Debug - Verify image exists
+      - name: Debug - Verify if image exists
         run: |
           echo "Checking image: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}"
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-book-api:${{ github.sha }}
